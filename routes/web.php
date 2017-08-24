@@ -34,13 +34,4 @@ Route::group([
     Route::resource('users','UserController');
 });
 
-Route::get('eloquent', function() {
-
-    return View::make('eloquent')
-
-        // all the bears (will also return the fish, trees, and picnics that belong to them)
-        ->with('bears', \App\Bear::with(['trees', 'picnics', 'fish'])->get());
-
-});
-
 
